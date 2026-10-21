@@ -788,13 +788,37 @@ section {
   <p>Discover why capable, intelligent professionals sometimes struggle to get recognised, heard and promoted, and what you can do about it.</p>
  
 <div id="free-guide-signup" style="scroll-margin-top: 90px; margin-top: 26px;">
-  <a href="https://preview.mailerlite.io/forms/2713450/201344700443002414/share"
-     target="_blank" rel="noopener noreferrer"
-     style="display: inline-block; background: #10283e; color: #ffffff; padding: 16px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 16px;">
-    GET MY FREE GUIDE
-  </a>
-  <p style="font-size: 14px; margin-top: 12px;">Enter your email on the secure signup page to receive your free guide.</p>
+  <!-- MailerLite on-page signup; working hosted form remains as a fallback. -->
+  <div class="ml-embedded" data-form="406TrK"></div>
+  <div id="free-guide-fallback">
+    <a href="https://preview.mailerlite.io/forms/2713450/201344700443002414/share"
+       target="_blank" rel="noopener noreferrer"
+       style="display: inline-block; background: #10283e; color: #ffffff; padding: 16px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 16px;">
+      GET MY FREE GUIDE
+    </a>
+    <p style="font-size: 14px; margin-top: 12px;">Enter your email on the secure signup page to receive your free guide.</p>
+  </div>
 </div>
+<script>
+(function (w, d, e, u, f, l, n) {
+  w[f] = w[f] || function () { (w[f].q = w[f].q || []).push(arguments); };
+  l = d.createElement(e); l.async = 1; l.src = u;
+  n = d.getElementsByTagName(e)[0]; n.parentNode.insertBefore(l, n);
+})(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+ml('account', '2713450');
+(function () {
+  var embedded = document.querySelector('#free-guide-signup .ml-embedded');
+  var fallback = document.getElementById('free-guide-fallback');
+  if (!embedded || !fallback) return;
+  function checkForm() {
+    var email = embedded.querySelector('input[type="email"]');
+    fallback.style.display = email && email.getClientRects().length ? 'none' : '';
+  }
+  var observer = new MutationObserver(checkForm);
+  observer.observe(embedded, {childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class']});
+  checkForm();
+})();
+</script>
 </div>
 
     
