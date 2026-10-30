@@ -985,5 +985,41 @@ section {
     });
 });
 </script>
+
+<script>
+  // Record the guide signup only after MailerLite displays its success state.
+  (function () {
+    const form = document.getElementById("free-guide-signup");
+    if (!form) return;
+
+    const successText = "Your Free Guide Is on Its Way!";
+    let tracked = false;
+
+    function trackSuccessfulSignup() {
+      if (tracked || !form.innerText.includes(successText)) return;
+      tracked = true;
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          lead_source: "free_guide_signup",
+          form_id: "406TrK"
+        });
+      }
+
+      observer.disconnect();
+    }
+
+    const observer = new MutationObserver(trackSuccessfulSignup);
+    observer.observe(form, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+    });
+
+    trackSuccessfulSignup();
+  })();
+</script>
 </body>
 </html>
