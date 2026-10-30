@@ -987,22 +987,24 @@ section {
 </script>
 
 <script>
-  // Record the guide signup only after MailerLite displays its success state.
+  // Track a free-guide lead only after MailerLite confirms a successful signup.
   (function () {
-    const form = document.getElementById("free-guide-signup");
-    if (!form) return;
+    const formContainer =
+      document.getElementById("free-guide-signup") ||
+      document.querySelector('.ml-embedded[data-form="406TrK"]');
+
+    if (!formContainer) return;
 
     const successText = "Your Free Guide Is on Its Way!";
     let tracked = false;
 
     function trackSuccessfulSignup() {
-      if (tracked || !form.innerText.includes(successText)) return;
+      if (tracked || !formContainer.innerText.includes(successText)) return;
       tracked = true;
 
       if (typeof window.gtag === "function") {
         window.gtag("event", "generate_lead", {
-          lead_source: "free_guide_signup",
-          form_id: "406TrK"
+          lead_source: "free_guide_signup"
         });
       }
 
@@ -1010,7 +1012,7 @@ section {
     }
 
     const observer = new MutationObserver(trackSuccessfulSignup);
-    observer.observe(form, {
+    observer.observe(formContainer, {
       childList: true,
       subtree: true,
       characterData: true,
