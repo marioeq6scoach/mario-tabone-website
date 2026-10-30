@@ -153,6 +153,15 @@
 </script>
 <!-- End MailerLite Universal -->
   <link rel="canonical" href="https://mariotabone.com.au/too-smart-to-be-overlooked.html">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4NSBLPWDLY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4NSBLPWDLY');
+</script>
 </head>
 <body>
 
@@ -203,5 +212,42 @@
 
 </main>
 
+<script>
+  // Track a free-guide lead only after MailerLite confirms a successful signup.
+  (function () {
+    const formContainer =
+      document.getElementById("free-guide-signup") ||
+      document.querySelector('.ml-embedded[data-form="406TrK"]');
+
+    if (!formContainer) return;
+
+    const successText = "Your Free Guide Is on Its Way!";
+    let tracked = false;
+
+    function trackSuccessfulSignup() {
+      if (tracked || !formContainer.innerText.includes(successText)) return;
+      tracked = true;
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          lead_source: "free_guide_signup"
+        });
+      }
+
+      observer.disconnect();
+    }
+
+    const observer = new MutationObserver(trackSuccessfulSignup);
+    observer.observe(formContainer, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+    });
+
+    trackSuccessfulSignup();
+  })();
+</script>
 </body>
 </html>
