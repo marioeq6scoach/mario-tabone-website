@@ -583,6 +583,37 @@ section {
       .nav-links { justify-content: center; gap: 6px 18px; }
       .button { display: block; text-align: center; }
     }
+
+    /* Keep the embedded guide form readable and compact on phones. */
+    @media (max-width: 640px) {
+      .free-guide-card {
+        padding: 16px !important;
+      }
+      #free-guide-signup .ml-form-embedWrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      #free-guide-signup .ml-form-embedBody,
+      #free-guide-signup .ml-form-successBody {
+        padding: 20px 16px !important;
+      }
+      #free-guide-signup .ml-form-embedContent h1,
+      #free-guide-signup .ml-form-embedContent h2,
+      #free-guide-signup .ml-form-embedContent h3,
+      #free-guide-signup .ml-form-embedContent h4,
+      #free-guide-signup .ml-form-successContent h4 {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+      }
+      #free-guide-signup .ml-form-embedContent p,
+      #free-guide-signup .ml-form-successContent p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+      }
+    }
   </style>
 <!-- MailerLite Universal -->
 <script>
@@ -798,7 +829,7 @@ section {
     </p>
 
     
-<div style="background: #ffffff; border: 1px solid #e5d8c7; border-radius: 12px; padding: 32px; margin: 32px 0 48px; text-align: center;">
+<div class="free-guide-card" style="background: #ffffff; border: 1px solid #e5d8c7; border-radius: 12px; padding: 32px; margin: 32px 0 48px; text-align: center;">
   <span class="eyebrow">FREE EBOOK</span>
   <h2>5 Reasons Smart People Get Overlooked</h2>
   <p>Discover why capable, intelligent professionals sometimes struggle to get recognised, heard and promoted, and what you can do about it.</p>
