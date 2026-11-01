@@ -616,8 +616,20 @@ section {
     }
 
     /* One concise introduction above the existing MailerLite fields. */
+    #free-guide-signup .ml-form-embedBody {
+      display: flex;
+      flex-direction: column;
+    }
+    #free-guide-signup .ml-form-embedBody .ml-block-form {
+      order: 1;
+    }
     #free-guide-signup .ml-form-embedBody .ml-form-embedContent {
-      display: none !important;
+      order: 2;
+      display: block !important;
+      margin-top: 20px !important;
+    }
+    #free-guide-signup .ml-form-embedBody .ml-form-embedContent h4 {
+      display: none;
     }
     .free-guide-intro { max-width: 520px; margin: 0 auto 16px; }
     .free-guide-intro .eyebrow { margin-bottom: 8px; }
@@ -851,7 +863,6 @@ section {
   <div class="free-guide-intro">
     <span class="eyebrow">FREE GUIDE</span>
     <h2>5 Reasons Smart People Get Overlooked</h2>
-    <p>Practical ways to communicate with confidence and make your expertise count.</p>
     <p class="free-guide-consent">Sign up for your emailed guide and six follow-up emails from Mario Tabone Coaching about communication and influence. Unsubscribe anytime.</p>
   </div>
   <!-- MailerLite on-page signup; working hosted form remains as a fallback. -->
