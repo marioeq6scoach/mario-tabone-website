@@ -32,7 +32,7 @@
     <h2>Information collected</h2>
     <ul>
       <li><strong>Free guide signup:</strong> your email address, subscription status, and related subscription records. MailerLite may also record email delivery and engagement events, such as opens, clicks, and unsubscribes.</li>
-      <li><strong>Website use:</strong> the site uses Google Analytics to understand how visitors use its pages. Analytics may use cookies or similar technologies and collect information such as pages viewed, browser or device details, and interaction data. Your browser settings can limit cookies.</li>
+      <li><strong>Website use:</strong> Google Analytics measures website use and may collect page views, browser or device details, and interaction data. If you accept the optional advertising measurement choice, Meta Pixel may also collect the page URL, device/browser details, and interactions and send them to Meta. The Pixel is not loaded when you reject.</li>
       <li><strong>Messages and bookings:</strong> if you contact me, I use the details and information you choose to provide to respond. If you book or pay for a session, Calendly and Stripe handle information needed for those services under their own privacy notices.</li>
       <li><strong>Technical information:</strong> when a page loads, your browser sends technical information to the services that deliver the site. Those services may process details such as an IP address, browser information, and the page requested.</li>
     </ul>
@@ -44,11 +44,14 @@
     <p>When you request the free guide, MailerLite sends the guide and the six-email follow-up series described on the signup form. Every email includes an unsubscribe option. You can unsubscribe at any time, or contact me using the details below. I may keep a minimal record of an unsubscribe so I can respect your choice.</p>
 
     <h2>Service providers and overseas handling</h2>
-    <p>The website relies on service providers to operate these functions. MailerLite manages the signup form, subscriber records, and emails. Google Analytics measures website use. Calendly supports bookings, and Stripe processes payments when you choose to book a paid session. Website hosting and security providers may also process technical information needed to deliver and protect the site.</p>
+    <p>The website relies on service providers to operate these functions. MailerLite manages the signup form, subscriber records, and emails. Google Analytics measures website use. Meta may receive website-use information through Meta Pixel when you accept the optional advertising measurement choice. Calendly supports bookings, and Stripe processes payments when you choose to book a paid session. Website hosting and security providers may also process technical information needed to deliver and protect the site.</p>
     <p>These providers may store or process information outside Australia. Their own privacy notices explain their handling practices. I do not sell your personal information.</p>
 
+    <h2>Advertising measurement and your choice</h2>
+    <p>Meta Pixel is used to measure advertising and, where applicable, improve ad delivery. It may share a page URL, device/browser details, and interactions with Meta. The Pixel loads only if you select “Accept” in the website privacy choice. Selecting “Reject” keeps it off on that browser. You can change your choice using the “Privacy choices” button on the site; changing it does not undo information already sent to Meta.</p>
+
     <h2>Cookies and analytics</h2>
-    <p>Google Analytics may use cookies or similar technologies to measure visits and interactions. You can manage cookies through your browser settings. If you block them, some analytics information may not be collected.</p>
+    <p>Google Analytics may use cookies or similar technologies to measure visits and interactions. Browser settings can limit cookies; this is separate from the Meta Pixel choice above.</p>
 
     <h2>Storage and security</h2>
     <p>I keep personal information for as long as it is reasonably needed for the purposes described above, to manage our relationship, or to meet legal obligations. Service providers may retain limited records under their own retention and backup practices. Reasonable steps are taken to protect information, but no internet transmission or storage system can be guaranteed to be completely secure.</p>
@@ -60,5 +63,99 @@
     <p>I may update this policy when my practices or services change. The latest version will always be published on this page with its update date.</p>
   </main>
   <footer><p>© 2026 Mario Tabone · <a href="https://mariotabone.com.au/">Home</a></p></footer>
+
+<!-- Meta Pixel loads only after a visitor accepts the optional advertising measurement choice. -->
+<script>
+(function () {
+  var consentKey = "mt_meta_pixel_consent_v1";
+  var pixelId = "1635463789840833";
+
+  function loadMetaPixel() {
+    if (window.__mtMetaPixelLoaded) return;
+    window.__mtMetaPixelLoaded = true;
+    !function(f,b,e,v,n,t,s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", pixelId);
+    window.fbq("track", "PageView");
+  }
+
+  function showChoice() {
+    if (document.getElementById("mt-meta-consent-banner")) return;
+    var style = document.createElement("style");
+    style.textContent =
+      "#mt-meta-consent-banner{position:fixed;z-index:99999;left:0;right:0;bottom:0;background:#1f2a37;color:#fff;padding:16px 20px;box-shadow:0 -3px 16px rgba(0,0,0,.2);font:15px/1.45 Arial,sans-serif}" +
+      "#mt-meta-consent-inner{max-width:1040px;margin:auto;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}" +
+      "#mt-meta-consent-banner p{margin:0;max-width:690px;color:#fff}" +
+      "#mt-meta-consent-banner a{color:#fff;text-decoration:underline}" +
+      ".mt-meta-consent-actions{display:flex;gap:10px}" +
+      ".mt-meta-consent-actions button,#mt-meta-privacy-choice{border:1px solid #fff;border-radius:6px;padding:10px 14px;font-weight:700;cursor:pointer}" +
+      ".mt-meta-consent-actions button{background:#fff;color:#1f2a37}" +
+      ".mt-meta-consent-actions button:last-child{background:transparent;color:#fff}" +
+      "#mt-meta-privacy-choice{position:fixed;z-index:9998;right:12px;bottom:12px;background:#1f2a37;color:#fff;font:13px Arial,sans-serif}";
+    document.head.appendChild(style);
+
+    var banner = document.createElement("div");
+    banner.id = "mt-meta-consent-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Privacy choice for Meta advertising measurement");
+    var inner = document.createElement("div");
+    inner.id = "mt-meta-consent-inner";
+    var copy = document.createElement("p");
+    copy.appendChild(document.createTextNode("Optional: Meta Pixel helps measure advertising. If you accept, Meta may receive this page's URL, device/browser details and interactions. Reject to keep it off on this browser. "));
+    var policy = document.createElement("a");
+    policy.href = "https://mariotabone.com.au/privacy-policy.html";
+    policy.textContent = "Privacy policy";
+    copy.appendChild(policy);
+    var actions = document.createElement("div");
+    actions.className = "mt-meta-consent-actions";
+    var accept = document.createElement("button");
+    accept.type = "button";
+    accept.textContent = "Accept";
+    accept.addEventListener("click", function () {
+      localStorage.setItem(consentKey, "accepted");
+      banner.remove();
+      loadMetaPixel();
+    });
+    var reject = document.createElement("button");
+    reject.type = "button";
+    reject.textContent = "Reject";
+    reject.addEventListener("click", function () {
+      localStorage.setItem(consentKey, "rejected");
+      banner.remove();
+    });
+    actions.appendChild(accept);
+    actions.appendChild(reject);
+    inner.appendChild(copy);
+    inner.appendChild(actions);
+    banner.appendChild(inner);
+    document.body.appendChild(banner);
+  }
+
+  var choiceButton = document.createElement("button");
+  choiceButton.id = "mt-meta-privacy-choice";
+  choiceButton.type = "button";
+  choiceButton.textContent = "Privacy choices";
+  choiceButton.addEventListener("click", showChoice);
+  document.body.appendChild(choiceButton);
+
+  var savedChoice = localStorage.getItem(consentKey);
+  if (savedChoice === "accepted") loadMetaPixel();
+  else if (!savedChoice) showChoice();
+})();
+</script>
 </body>
 </html>
