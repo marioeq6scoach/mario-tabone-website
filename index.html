@@ -614,6 +614,23 @@ section {
         margin-bottom: 12px !important;
       }
     }
+
+    /* One concise introduction above the existing MailerLite fields. */
+    #free-guide-signup .ml-form-embedBody .ml-form-embedContent {
+      display: none !important;
+    }
+    .free-guide-intro { max-width: 520px; margin: 0 auto 16px; }
+    .free-guide-intro .eyebrow { margin-bottom: 8px; }
+    .free-guide-intro h2 { margin-bottom: 12px; }
+    .free-guide-intro p { margin-bottom: 12px; }
+    .free-guide-intro .free-guide-consent {
+      font-size: 14px; line-height: 1.45; color: var(--ink-soft);
+    }
+    @media (max-width: 640px) {
+      .free-guide-intro h2 { font-size: 24px; line-height: 1.2; }
+      .free-guide-intro p { font-size: 16px; line-height: 1.45; }
+      .free-guide-intro .free-guide-consent { font-size: 14px; }
+    }
   </style>
 <!-- MailerLite Universal -->
 <script>
@@ -830,11 +847,13 @@ section {
 
     
 <div class="free-guide-card" style="background: #ffffff; border: 1px solid #e5d8c7; border-radius: 12px; padding: 32px; margin: 32px 0 48px; text-align: center;">
-  <span class="eyebrow">FREE EBOOK</span>
-  <h2>5 Reasons Smart People Get Overlooked</h2>
-  <p>Discover why capable, intelligent professionals sometimes struggle to get recognised, heard and promoted, and what you can do about it.</p>
- 
-<div id="free-guide-signup" style="scroll-margin-top: 90px; margin-top: 26px;">
+<div id="free-guide-signup" style="scroll-margin-top: 90px;">
+  <div class="free-guide-intro">
+    <span class="eyebrow">FREE GUIDE</span>
+    <h2>5 Reasons Smart People Get Overlooked</h2>
+    <p>Practical ways to communicate with confidence and make your expertise count.</p>
+    <p class="free-guide-consent">Sign up for your emailed guide and six follow-up emails from Mario Tabone Coaching about communication and influence. Unsubscribe anytime.</p>
+  </div>
   <!-- MailerLite on-page signup; working hosted form remains as a fallback. -->
   <div class="ml-embedded" data-form="406TrK"></div>
 
