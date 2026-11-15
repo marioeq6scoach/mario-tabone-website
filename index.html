@@ -19,14 +19,14 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Executive Presence & Communication Coach | Mario Tabone">
 <meta property="og:description" content="Executive presence and communication coaching for intelligent, analytical professionals worldwide. Build confidence, rapport and authentic influence.">
-<meta property="og:image" content="mario-about.jpg">
+<meta property="og:image" content="https://mariotabone.com.au/mario-about.jpg">
 <meta property="og:url" content="https://mariotabone.com.au/">
 <meta property="og:site_name" content="Mario Tabone">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Executive Presence & Communication Coach | Mario Tabone">
 <meta name="twitter:description" content="Executive presence and communication coaching for intelligent, analytical professionals worldwide. Build confidence, rapport and authentic influence.">
-<meta name="twitter:image" content="mario-about.jpg">
+<meta name="twitter:image" content="https://mariotabone.com.au/mario-about.jpg">
   <style>
     /* ---------- BASIC SETUP ---------- */
     :root {
@@ -695,11 +695,11 @@ section {
 </p>
 
 <p class="lead" style="margin-bottom: 18px;">
-  I've spent decades studying how people communicate, build relationships and influence decisions. And I've learnt that these skills aren't something you're simply born with. They're skills you can develop with the right guidance and practice.
+  Communication, confidence and influence are skills you can develop. I'll help you turn your expertise into conversations that connect, build trust and get your ideas heard.
 </p>
 
 <p class="lead">
-  You don't need to become louder or turn yourself into an extrovert. You just need to learn how to make your strengths work for you.
+  You don't need to become an extrovert. You can make your natural strengths work for you.
 </p>
 
         <a href="https://calendly.com/mario_tabone_coach/discovery-session" target="_blank" rel="noopener noreferrer" class="button">Book Your Free 20-Minute Call</a>
@@ -1069,7 +1069,9 @@ section {
         });
       }
 
-      if (typeof window.fbq === "function") window.fbq("track", "Lead");
+      // Queue the confirmed lead until advertising consent has been granted and the pixel is ready.
+      window.__mtConfirmedLeadPending = true;
+      if (typeof window.__mtSendConfirmedLead === "function") window.__mtSendConfirmedLead();
 
       observer.disconnect();
     }
@@ -1114,7 +1116,14 @@ section {
     }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
     window.fbq("init", pixelId);
     window.fbq("track", "PageView");
+    if (typeof window.__mtSendConfirmedLead === "function") window.__mtSendConfirmedLead();
   }
+
+  window.__mtSendConfirmedLead = function () {
+    if (!window.__mtConfirmedLeadPending || localStorage.getItem(consentKey) !== "accepted" || typeof window.fbq !== "function") return;
+    window.__mtConfirmedLeadPending = false;
+    window.fbq("track", "Lead");
+  };
 
   function showChoice() {
     if (document.getElementById("mt-meta-consent-banner")) return;
