@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Your Free Guide | Mario Tabone</title>
+  <meta name="description" content="Get the free guide: 5 Reasons Smart People Get Overlooked (And What to Do About It). Practical communication and influence advice for analytical professionals.">
+  <link rel="canonical" href="https://mariotabone.com.au/free-guide/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="5 Reasons Smart People Get Overlooked | Free Guide">
+  <meta property="og:description" content="Discover why capable professionals get overlooked, and what to do about it. Get the free guide by email.">
+  <meta property="og:url" content="https://mariotabone.com.au/free-guide/">
+  <meta property="og:image" content="https://mariotabone.com.au/mario-about.jpg">
+  <!-- Same GA4 property as the main site -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4NSBLPWDLY"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-4NSBLPWDLY');
+  </script>
+  <!-- Keep the established MailerLite account and verified form -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account','2713450');
+  </script>
+  <style>
+    :root{--cream:#faf6f0;--ink:#1f2a37;--soft:#4a5565;--teal:#1f5f5b;--clay:#b4532a}
+    *{box-sizing:border-box}
+    html{background:var(--cream)}
+    body{font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;margin:0;color:var(--ink)}
+    a{color:var(--teal)}
+    header{padding:17px 20px;border-bottom:1px solid #e7dbcc;background:#fff}
+    header .wrap{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .wordmark{font:700 20px Georgia,serif;color:var(--ink);text-decoration:none}
+    .small-link{font-size:14px;text-decoration:none}
+    main{max-width:900px;margin:auto;padding:36px 20px 48px}
+    .hero{max-width:660px;margin:0 auto 21px;text-align:center}
+    .eyebrow{display:block;color:var(--clay);font-weight:700;letter-spacing:.12em;font-size:12px;margin-bottom:12px;text-transform:uppercase}
+    h1{font:700 clamp(32px,6vw,48px)/1.13 Georgia,serif;margin:0 0 17px}
+    p{margin:0 0 16px}
+    .lead{color:var(--soft);font-size:18px;max-width:580px;margin:0 auto 18px}
+    .form-card{background:#fff;border:1px solid #e5d8c7;border-radius:14px;padding:22px;box-shadow:0 9px 32px rgba(31,42,55,.07);max-width:620px;margin:0 auto}
+    .form-note{font-size:14px;color:var(--soft);text-align:center;max-width:520px;margin:14px auto 0}
+    #free-guide-signup .ml-embedded,#free-guide-signup .ml-form-embedWrapper{width:100%!important;max-width:100%!important;min-width:0!important}
+    #free-guide-signup .ml-form-embedBody,#free-guide-signup .ml-form-successBody{padding:16px!important}
+    #free-guide-signup .ml-form-embedContent h4{font-size:20px!important}
+    .trust{margin:22px auto 0;text-align:center;color:var(--soft);font-size:14px;max-width:650px}
+    footer{padding:25px 20px;text-align:center;border-top:1px solid #e7dbcc;color:var(--soft);font-size:13px}
+    @media(max-width:600px){main{padding:24px 15px 36px}.form-card{padding:12px}h1{font-size:34px}.lead{font-size:16px}header{padding:13px 16px}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><a class="wordmark" href="/">Mario Tabone</a><a class="small-link" href="/">About the coaching</a></div></header>
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Free practical communication guide</span>
+      <h1>5 Reasons Smart People Get Overlooked</h1>
+      <p class="lead">You can be excellent at what you do and still struggle to get your ideas heard. Discover five common reasons capable professionals get overlooked, and practical ways to change that.</p>
+    </div>
+    <section class="form-card" id="free-guide-signup" aria-label="Free guide email signup">
+      <div class="ml-embedded" data-form="406TrK"></div>
+      <p class="form-note">Enter your details to receive the guide by email. You will also receive six practical follow-up emails about communication and influence. Unsubscribe at any time.</p>
+    </section>
+    <p class="trust">No payment required. This is an email signup, not an instant PDF download. The guide is delivered through our established email process.</p>
+  </main>
+  <footer>&copy; 2026 Mario Tabone | Social Intelligence &amp; Influence Coach · <a href="../privacy-policy.html">Privacy policy</a></footer>
+<script>
+  // Track a free-guide lead only after MailerLite confirms a successful signup.
+  (function () {
+    const formContainer =
+      document.getElementById("free-guide-signup") ||
+      document.querySelector('.ml-embedded[data-form="406TrK"]');
+
+    if (!formContainer) return;
+
+    const successText = "Your Free Guide Is on Its Way!";
+    let tracked = false;
+
+    function trackSuccessfulSignup() {
+      if (tracked || !formContainer.innerText.includes(successText)) return;
+      tracked = true;
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          lead_source: "free_guide_signup"
+        });
+      }
+
+      // Queue the confirmed lead until advertising consent has been granted and the pixel is ready.
+      window.__mtConfirmedLeadPending = true;
+      if (typeof window.__mtSendConfirmedLead === "function") window.__mtSendConfirmedLead();
+
+      observer.disconnect();
+    }
+
+    const observer = new MutationObserver(trackSuccessfulSignup);
+    observer.observe(formContainer, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+    });
+
+    trackSuccessfulSignup();
+  })();
+</script>
+
+<!-- Meta Pixel loads only after a visitor accepts the optional advertising measurement choice. -->
+<script>
+(function () {
+  var consentKey = "mt_meta_pixel_consent_v1";
+  var pixelId = "1491685406193437";
+
+  function loadMetaPixel() {
+    if (window.__mtMetaPixelLoaded) return;
+    window.__mtMetaPixelLoaded = true;
+    !function(f,b,e,v,n,t,s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", pixelId);
+    window.fbq("track", "PageView");
+    if (typeof window.__mtSendConfirmedLead === "function") window.__mtSendConfirmedLead();
+  }
+
+  window.__mtSendConfirmedLead = function () {
+    if (!window.__mtConfirmedLeadPending || localStorage.getItem(consentKey) !== "accepted" || typeof window.fbq !== "function") return;
+    window.__mtConfirmedLeadPending = false;
+    window.fbq("track", "Lead");
+  };
+
+  function showChoice() {
+    if (document.getElementById("mt-meta-consent-banner")) return;
+    var style = document.createElement("style");
+    style.textContent =
+      "#mt-meta-consent-banner{position:fixed;z-index:99999;left:0;right:0;bottom:0;background:#1f2a37;color:#fff;padding:16px 20px;box-shadow:0 -3px 16px rgba(0,0,0,.2);font:15px/1.45 Arial,sans-serif}" +
+      "#mt-meta-consent-inner{max-width:1040px;margin:auto;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}" +
+      "#mt-meta-consent-banner p{margin:0;max-width:690px;color:#fff}" +
+      "#mt-meta-consent-banner a{color:#fff;text-decoration:underline}" +
+      ".mt-meta-consent-actions{display:flex;gap:10px}" +
+      ".mt-meta-consent-actions button,#mt-meta-privacy-choice{border:1px solid #fff;border-radius:6px;padding:10px 14px;font-weight:700;cursor:pointer}" +
+      ".mt-meta-consent-actions button{background:#fff;color:#1f2a37}" +
+      ".mt-meta-consent-actions button:last-child{background:transparent;color:#fff}" +
+      "#mt-meta-privacy-choice{position:fixed;z-index:9998;right:12px;bottom:12px;background:#1f2a37;color:#fff;font:13px Arial,sans-serif}";
+    document.head.appendChild(style);
+
+    var banner = document.createElement("div");
+    banner.id = "mt-meta-consent-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Privacy choice for Meta advertising measurement");
+    var inner = document.createElement("div");
+    inner.id = "mt-meta-consent-inner";
+    var copy = document.createElement("p");
+    copy.appendChild(document.createTextNode("Optional: Meta Pixel helps measure advertising. If you accept, Meta may receive this page's URL, device/browser details and interactions. Reject to keep it off on this browser. "));
+    var policy = document.createElement("a");
+    policy.href = "https://mariotabone.com.au/privacy-policy.html";
+    policy.textContent = "Privacy policy";
+    copy.appendChild(policy);
+    var actions = document.createElement("div");
+    actions.className = "mt-meta-consent-actions";
+    var accept = document.createElement("button");
+    accept.type = "button";
+    accept.textContent = "Accept";
+    accept.addEventListener("click", function () {
+      localStorage.setItem(consentKey, "accepted");
+      banner.remove();
+      loadMetaPixel();
+    });
+    var reject = document.createElement("button");
+    reject.type = "button";
+    reject.textContent = "Reject";
+    reject.addEventListener("click", function () {
+      localStorage.setItem(consentKey, "rejected");
+      banner.remove();
+    });
+    actions.appendChild(accept);
+    actions.appendChild(reject);
+    inner.appendChild(copy);
+    inner.appendChild(actions);
+    banner.appendChild(inner);
+    document.body.appendChild(banner);
+  }
+
+  var choiceButton = document.createElement("button");
+  choiceButton.id = "mt-meta-privacy-choice";
+  choiceButton.type = "button";
+  choiceButton.textContent = "Privacy choices";
+  choiceButton.addEventListener("click", showChoice);
+  document.body.appendChild(choiceButton);
+
+  var savedChoice = localStorage.getItem(consentKey);
+  if (savedChoice === "accepted") loadMetaPixel();
+  else if (!savedChoice) showChoice();
+})();
+</script>
+
+</body>
+</html>
