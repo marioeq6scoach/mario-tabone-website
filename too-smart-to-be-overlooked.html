@@ -60,8 +60,40 @@
   margin-top: 15px;
 }
 
+.ebook-call {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.ebook-call h2 {
+  margin-bottom: 15px;
+}
+
+.ebook-call p {
+  max-width: 600px;
+}
+
+.ebook-call a {
+  display: inline-block;
+  padding: 16px 32px;
+  margin-top: 10px;
+  background-color: #bd481f;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .ebook-signup {
+    padding: 22px;
+  }
+
+  .ebook-call {
     padding: 22px;
   }
 }
@@ -210,6 +242,20 @@
 
 </section>
 
+<section class="ebook-call">
+
+<h2>Want to talk it through?</h2>
+
+<p>
+  If there's one situation where communication or influence isn't working for you,
+  book a free 20-minute call with me. We'll look at what's getting in your way,
+  and you'll leave with one practical thing to try. No obligation, no sales pitch.
+</p>
+
+<a href="https://calendly.com/mario_tabone_coach/discovery-session" target="_blank" rel="noopener noreferrer">Book Your Free 20-Minute Call</a>
+
+</section>
+
 </main>
 
 <script>
@@ -221,7 +267,7 @@
 
     if (!formContainer) return;
 
-    const successText = "Your Free Guide Is on Its Way!";
+    const successText = "Your free guide is on its way";
     let tracked = false;
 
     function trackSuccessfulSignup() {
