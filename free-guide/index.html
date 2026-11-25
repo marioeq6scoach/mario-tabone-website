@@ -35,19 +35,25 @@
     .wordmark{font:700 20px Georgia,serif;color:var(--ink);text-decoration:none}
     .small-link{font-size:14px;text-decoration:none}
     main{max-width:900px;margin:auto;padding:36px 20px 48px}
-    .hero{max-width:660px;margin:0 auto 21px;text-align:center}
-    .eyebrow{display:block;color:var(--clay);font-weight:700;letter-spacing:.12em;font-size:12px;margin-bottom:12px;text-transform:uppercase}
-    h1{font:700 clamp(32px,6vw,48px)/1.13 Georgia,serif;margin:0 0 17px}
+    .hero{max-width:660px;margin:0 auto 14px;text-align:center}
+    .eyebrow{display:block;color:var(--clay);font-weight:700;letter-spacing:.12em;font-size:12px;margin-bottom:10px;text-transform:uppercase}
+    h1{font:700 clamp(32px,6vw,48px)/1.13 Georgia,serif;margin:0 0 10px}
     p{margin:0 0 16px}
-    .lead{color:var(--soft);font-size:18px;max-width:580px;margin:0 auto 18px}
+    .lead{color:var(--soft);font-size:18px;max-width:580px;margin:0 auto 12px}
+    .hero-photo{width:150px;height:150px;object-fit:cover;border-radius:50%;margin:2px auto 0;display:block;box-shadow:0 6px 20px rgba(31,42,55,.15)}
     .form-card{background:#fff;border:1px solid #e5d8c7;border-radius:14px;padding:22px;box-shadow:0 9px 32px rgba(31,42,55,.07);max-width:620px;margin:0 auto}
     .form-note{font-size:14px;color:var(--soft);text-align:center;max-width:520px;margin:14px auto 0}
     #free-guide-signup .ml-embedded,#free-guide-signup .ml-form-embedWrapper{width:100%!important;max-width:100%!important;min-width:0!important}
-    #free-guide-signup .ml-form-embedBody,#free-guide-signup .ml-form-successBody{padding:16px!important}
-    #free-guide-signup .ml-form-embedContent h4{font-size:20px!important}
+    #free-guide-signup .ml-form-embedBody,#free-guide-signup .ml-form-successBody{padding:10px!important}
+    #free-guide-signup .ml-form-embedContent h4{font-size:18px!important;margin:0 0 8px!important}
+    #free-guide-signup .ml-form-embedContent p{font-size:15px!important;line-height:1.45!important;margin:0 0 8px!important}
     .trust{margin:22px auto 0;text-align:center;color:var(--soft);font-size:14px;max-width:650px}
+    .call-card{background:#fff;border:1px solid #e5d8c7;border-radius:14px;padding:22px;box-shadow:0 9px 32px rgba(31,42,55,.07);max-width:620px;margin:22px auto 0;text-align:center}
+    .call-card h2{font:700 24px/1.3 Georgia,serif;margin:0 0 10px}
+    .call-card p{color:var(--soft);max-width:520px;margin:0 auto 16px}
+    .call-card a{display:inline-block;padding:14px 28px;background:#bd481f;color:#fff;border-radius:8px;font-size:18px;font-weight:700;text-decoration:none}
     footer{padding:25px 20px;text-align:center;border-top:1px solid #e7dbcc;color:var(--soft);font-size:13px}
-    @media(max-width:600px){main{padding:24px 15px 36px}.form-card{padding:12px}h1{font-size:34px}.lead{font-size:16px}header{padding:13px 16px}}
+    @media(max-width:600px){main{padding:20px 15px 36px}.form-card{padding:12px}h1{font-size:30px}.lead{font-size:16px}header{padding:13px 16px}.hero-photo{width:110px;height:110px}.call-card{padding:18px}}
   </style>
 </head>
 <body>
@@ -57,12 +63,18 @@
       <span class="eyebrow">Free practical communication guide</span>
       <h1>5 Reasons Smart People Get Overlooked</h1>
       <p class="lead">You can be excellent at what you do and still struggle to get your ideas heard. Discover five common reasons capable professionals get overlooked, and practical ways to change that.</p>
+      <img class="hero-photo" src="/mario-about.jpg" alt="Mario Tabone">
     </div>
     <section class="form-card" id="free-guide-signup" aria-label="Free guide email signup">
       <div class="ml-embedded" data-form="406TrK"></div>
       
     </section>
-    <p class="trust">No payment required. This is an email signup, not an instant PDF download. The guide is delivered through our established email process.</p>
+    <p class="trust">Free, no payment needed. Your guide will be emailed to you straight after you sign up — unsubscribe anytime.</p>
+    <section class="call-card" aria-label="Book a free call">
+      <h2>Want to talk it through?</h2>
+      <p>If there's one situation where communication or influence isn't working for you, book a free 20-minute call with me. We'll look at what's getting in your way, and you'll leave with one practical thing to try. No obligation, no sales pitch.</p>
+      <a href="https://calendly.com/mario_tabone_coach/discovery-session" target="_blank" rel="noopener noreferrer">Book Your Free 20-Minute Call</a>
+    </section>
   </main>
   <footer>&copy; 2026 Mario Tabone | Social Intelligence &amp; Influence Coach · <a href="../privacy-policy.html">Privacy policy</a></footer>
 <script>
@@ -74,7 +86,7 @@
 
     if (!formContainer) return;
 
-    const successText = "Your Free Guide Is on Its Way!";
+    const successText = "Your free guide is on its way";
     let tracked = false;
 
     function trackSuccessfulSignup() {
