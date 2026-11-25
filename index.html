@@ -621,12 +621,16 @@ section {
       flex-direction: column;
     }
     #free-guide-signup .ml-form-embedBody .ml-block-form {
-      order: 1;
+      order: 2;
     }
     #free-guide-signup .ml-form-embedBody .ml-form-embedContent {
-      order: 2;
+      order: 1;
       display: block !important;
-      margin-top: 20px !important;
+      margin-bottom: 20px !important;
+    }
+    #free-guide-signup .ml-form-embedWrapper {
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
     #free-guide-signup .ml-form-embedBody .ml-form-embedContent h4 {
       display: none;
@@ -682,7 +686,8 @@ section {
       <div class="container">
         <img src="mario-hero.jpg"
      alt="Mario Tabone | Social Intelligence and Behavioural Coach"
-     class="hero-photo">
+     class="hero-photo"
+     fetchpriority="high">
         <span class="eyebrow">Turn Your Intelligence Into Influence</span>
         <h1>You Mastered the Technical Side. Now Master the People Side.</h1>
         
@@ -858,7 +863,7 @@ section {
     </p>
 
     
-<div class="free-guide-card" style="background: #ffffff; border: 1px solid #e5d8c7; border-radius: 12px; padding: 32px; margin: 32px 0 48px; text-align: center;">
+<div class="free-guide-card" style="background: #ffffff; border: 1px solid #e5d8c7; border-radius: 12px; padding: 32px; margin: 32px auto 48px; max-width: 640px; text-align: center;">
 <div id="free-guide-signup" style="scroll-margin-top: 90px;">
   <div class="free-guide-intro">
     <span class="eyebrow">FREE GUIDE</span>
